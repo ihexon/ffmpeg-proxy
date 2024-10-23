@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+cmd0=$(basename $( echo  $0 ))
+cmd_all="$cmd0 $@"
+
+
+echo "$cmd_all" | netcat  127.0.0.1 12345

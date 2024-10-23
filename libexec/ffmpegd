@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+echo " --- FFMPEG PROXY MACOS SIDE ---"
+uname -a
+
+socat TCP-LISTEN:12345,reuseaddr,fork EXEC:"bash +x wrapper",pty,echo=0,stderr

@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+while IFS= read -r line; do
+	line=$(echo "$line" | xargs)
+
+	if [ -z "$line" ]; then
+		continue
+	fi
+
+	bash -c "$line;exit"
+	if [ $? -ne 0 ]; then
+		echo "Error executing command: $line" >&2
+		exit
+	fi
+	exit
+done
